@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
-import './App.css';
 import Scroll from '../components/Scroll';
+import './App.css';
 
 export default class App extends Component {
     state = {
@@ -27,9 +27,8 @@ export default class App extends Component {
                 <h1 className="tc f1 light-green">RoboFriends</h1>
                 <SearchBox searchChange={this.onSearchChange}/>
                 <Scroll>
-                    <CardList robots={robots.filter(robot => robot.name.toLowerCase().includes(searchfield))}/>
+                    <CardList robots={robots.filter(({ name }) => name.toLowerCase().includes(searchfield))}/>
                 </Scroll>
-                
             </div>
         );
     }
